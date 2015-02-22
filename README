@@ -28,8 +28,8 @@ Taint value: 12289
                   includes modules with no license.
                   Set by modutils >= 2.4.9 and module-init-tools
 12    4096        An out-of-tree module has been loaded                           
-13    8192        An unsigned module has been loaded in a kernel supporting module
-                  signature
+13    8192        An unsigned module has been loaded in a kernel supporting
+                  module signature
 
 $ ./tainted -i
 [bit] [bit value] [description]                                                   
@@ -42,16 +42,16 @@ $ ./tainted -i
 4     16          A hardware machine check error occurred on the system           
 5     32          A bad page was discovered on the system                         
 6     64          The user has asked that the system be marked "tainted". This
-                  could be because they are running software that directly modifies
-                  the hardware, or for other reasons
+                  could be because they are running software that directly
+                  modifies the hardware, or for other reasons
 7     128         The system has died                                             
-8     256         The ACPI DSDT has been overridden with one supplied by the user
-                  instead of using the one provided by the hardware
+8     256         The ACPI DSDT has been overridden with one supplied by the
+                  user instead of using the one provided by the hardware
 9     512         A kernel warning has occurred                                   
 10    1024        A module from drivers/staging was loaded                        
 11    2048        The system is working around a severe firmware bug              
 12    4096        An out-of-tree module has been loaded                           
-13    8192        An unsigned module has been loaded in a kernel supporting module
-                  signature
+13    8192        An unsigned module has been loaded in a kernel supporting
+                  module signature
 14    16384       A soft lockup has previously occurred on the system             
 15    32768       The kernel has been live patched                                
