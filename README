@@ -22,27 +22,36 @@ h - this help
 i - print information about the different taint bits
 
 $ ./tainted
-Taint value: 1024
-[10] 1024 - A module from drivers/staging was loaded
+Taint value: 12289
+[bit] [bit value] [description]                                                   
+0     1           A module with a non-GPL license has been loaded, this
+                  includes modules with no license.
+                  Set by modutils >= 2.4.9 and module-init-tools
+12    4096        An out-of-tree module has been loaded                           
+13    8192        An unsigned module has been loaded in a kernel supporting module
+                  signature
 
 $ ./tainted -i
-[0] 1 - A module with a non-GPL license has been loaded, this
-includes modules with no license.
-Set by modutils >= 2.4.9 and module-init-tools
-[1] 2 - A module was force loaded by insmod -f
-[2] 4 - Unsafe SMP processors: SMP with CPUs not designed for SMP
-[3] 8 - A module was forcibly unloaded from the system by rmmod -f
-[4] 16 - A hardware machine check error occurred on the system
-[5] 32 - A bad page was discovered on the system
-[6] 64 - The user has asked that the system be marked "tainted". This
-could be because they are running software that directly modifies
-the hardware, or for other reasons
-[7] 128 - The system has died
-[8] 256 - The ACPI DSDT has been overridden with one supplied by the user
-instead of using the one provided by the hardware
-[9] 512 - A kernel warning has occurred
-[10] 1024 - A module from drivers/staging was loaded
-[11] 2048 - The system is working around a severe firmware bug
-[12] 4096 - An out-of-tree module has been loaded
-[13] 8192 - An unsigned module has been loaded in a kernel supporting module
-signature
+[bit] [bit value] [description]                                                   
+0     1           A module with a non-GPL license has been loaded, this
+                  includes modules with no license.
+                  Set by modutils >= 2.4.9 and module-init-tools
+1     2           A module was force loaded by insmod -f                          
+2     4           Unsafe SMP processors: SMP with CPUs not designed for SMP       
+3     8           A module was forcibly unloaded from the system by rmmod -f      
+4     16          A hardware machine check error occurred on the system           
+5     32          A bad page was discovered on the system                         
+6     64          The user has asked that the system be marked "tainted". This
+                  could be because they are running software that directly modifies
+                  the hardware, or for other reasons
+7     128         The system has died                                             
+8     256         The ACPI DSDT has been overridden with one supplied by the user
+                  instead of using the one provided by the hardware
+9     512         A kernel warning has occurred                                   
+10    1024        A module from drivers/staging was loaded                        
+11    2048        The system is working around a severe firmware bug              
+12    4096        An out-of-tree module has been loaded                           
+13    8192        An unsigned module has been loaded in a kernel supporting module
+                  signature
+14    16384       A soft lockup has previously occurred on the system             
+15    32768       The kernel has been live patched                                
